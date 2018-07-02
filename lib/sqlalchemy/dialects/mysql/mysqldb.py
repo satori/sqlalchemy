@@ -103,7 +103,7 @@ class MySQLDialect_mysqldb(MySQLDialect):
 
     def do_ping(self, dbapi_connection):
         try:
-            dbapi_connection.ping()
+            dbapi_connection.ping(False)
         except self.dbapi.Error as err:
             if self.is_disconnect(err, dbapi_connection, None):
                 return False
